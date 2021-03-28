@@ -1,9 +1,10 @@
 #You are given two non-empty linked lists representing two non-negative integers. 
 #The digits are stored in reverse order, and each of their nodes contains a single digit. 
 #Add the two numbers and return the sum as a linked list.
+#You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 class Solution:
+    #change Linked list to List
     def node2list(self, node1: ListNode) -> List: #linked list -> list
         list1 = []
         while node1 != None :
@@ -11,6 +12,7 @@ class Solution:
             node1 = node1.next
         return list1
     
+    #change List to Linked List
     def list2node(self, list1: List) -> ListNode:
         result_node = ListNode()
         for i,num in enumerate(list1):
