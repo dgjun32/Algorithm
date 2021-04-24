@@ -20,8 +20,9 @@ class Solution:
         numerators = []
         dems = []
         while found == False and numerator > 0:
-            #procedure of dividing
+            #procedure of dividing - iteratively generates digit of each demical points 
             numerator *= 10
+            # if numerator already appeared, stops iterating and return answer
             if numerator in numerators:
                 found = True
                 idx = numerators.index(numerator)
@@ -31,6 +32,7 @@ class Solution:
             dem = str(int(numerator // denominator))
             dems.append(dem)
             numerator %= denominator
+            # if updated numerator is 0, stops iterating and return answer
             if numerator == 0:
                 ans += ''.join(dems)
         return sign + ans 
