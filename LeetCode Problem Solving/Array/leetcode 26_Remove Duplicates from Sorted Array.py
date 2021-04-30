@@ -1,10 +1,10 @@
 # solve it in O(1) extra memory
-
-def removeDuplicates(nums):
-        idx = 1
-        while idx < len(nums):
-            if nums[idx-1] == nums[idx]:
-                nums.pop(idx)
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        i = 1
+        while i <= len(nums)-1:
+            if nums[i-1] == nums[i]:
+                del nums[i-1]
             else:
-                idx += 1
-        return nums
+                i += 1
+        return len(nums)
